@@ -1,0 +1,200 @@
+{% extends 'Common/mainAdmin.html' %}
+{% load static %}
+{% block title %}
+  Dashboard
+{% endblock %}
+{% block head %}
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+{% endblock %}
+{% block content_tilte %}
+  <h1>Dashboard</h1>
+{% endblock %}
+{% block content %}
+  <div class="row p-0 m-0">
+    <div class="col-lg-4 col-md-6 col-12 p-5">
+      <div class="container" style="height: auto; width: auto;">
+        <canvas id="package" width="400" height="400"></canvas>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12 p-5">
+      <div class="container" style="height: auto; width: auto;">
+        <canvas id="person" width="400" height="400"></canvas>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12 p-5">
+      <div class="container" style="height: auto; width: auto;">
+        <canvas id="packaging" width="400" height="400"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="row p-0 m-0">
+    <div class="col-md-6 col-12 p-5">
+      <div class="container" style="height: auto; width: auto;">
+        <canvas id="send" width="400" height="400"></canvas>
+      </div>
+    </div>
+    <div class="col-md-6 col-12 p-5">
+      <div class="container" style="height: auto; width: auto;">
+        <canvas id="category" width="400" height="400"></canvas>
+      </div>
+    </div>
+  </div>
+  <div class="row p-0 m-0">
+    <div class="col-lg-4 col-md-6 col-12 p-5">
+      <div class="container" style="height: auto; width: auto;">
+        <canvas id="reason_purchase" width="400" height="400"></canvas>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12 p-5">
+      <div class="container" style="height: auto; width: auto;">
+        <canvas id="mark" width="400" height="400"></canvas>
+      </div>
+    </div>
+    <div class="col-lg-4 col-md-6 col-12 p-5">
+      <div class="container" style="height: auto; width: auto;">
+        <canvas id="article" width="400" height="400"></canvas>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+  var ctx1 = document.getElementById('package').getContext('2d')
+  var package_labels = {arreglo: {{ package_labels|safe }}};
+  var package_values = {arreglo: {{ package_values|safe }}};
+  var myChart = new Chart(ctx1, {
+    type: 'pie',
+    data: {
+      labels: package_labels.arreglo,
+      datasets: [
+        {
+          data: package_values.arreglo,
+          backgroundColor: ['rgba(255, 0, 0, 0.5)', 'rgba(0, 128, 255, 0.75)', 'rgba(46, 139, 87, 1.0)']
+        }
+      ]
+    }
+  })
+
+  var ctx2 = document.getElementById('packaging').getContext('2d')
+  var packaging_labels = {arreglo: {{ packaging_labels|safe }}};
+  var packaging_values = {arreglo: {{ packaging_values|safe }}};
+  var myChart = new Chart(ctx2, {
+    type: 'pie',
+    data: {
+      labels: packaging_labels.arreglo,
+      datasets: [
+        {
+          data: packaging_values.arreglo,
+          backgroundColor: ['rgba(255, 165, 0, 0.8)', 'rgba(75, 0, 130, 0.6)', 'rgba(0, 128, 0, 0.9)']
+        }
+      ]
+    }
+  })
+
+  var ctx3 = document.getElementById('person').getContext('2d')
+  var person_labels = {arreglo: {{ person_labels|safe }}};
+  var person_values = {arreglo: {{ person_values|safe }}};
+  var myChart = new Chart(ctx3, {
+    type: 'doughnut',
+    data: {
+      labels: person_labels.arreglo,
+      datasets: [
+        {
+          data: person_values.arreglo,
+          backgroundColor: ['rgba(255, 69, 0, 0.7)', 'rgba(0, 0, 255, 0.8)', 'rgba(128, 0, 128, 0.9)']
+        }
+      ]
+    }
+  })
+  
+  var ctx4 = document.getElementById('send').getContext('2d')
+  var send_labels = {arreglo: {{ send_labels|safe }}};
+  var send_values = {arreglo: {{ send_values|safe }}};
+  var data = {
+    labels: send_labels.arreglo,
+    datasets: [
+      {
+        label: '¿Compras muchos productos o esperas a almacenar muchos productos para pagar solo un envió?',
+        data: send_values.arreglo,
+        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+        borderColor: 'rgba(75, 192, 192, 1)',
+        borderWidth: 1
+      }
+    ]
+  }
+  var myChart = new Chart(ctx4, {
+    type: 'bar',
+    data: data
+  })
+  
+  var ctx5 = document.getElementById('category').getContext('2d')
+  var category_labels = {arreglo: {{ category_labels|safe }}};
+  var category_values = {arreglo: {{ category_values|safe }}};
+  var data = {
+    labels: category_labels.arreglo,
+    datasets: [
+      {
+        label: '¿Qué categoría de artículos compras más?',
+        data: category_values.arreglo,
+        backgroundColor: 'rgba(75, 0, 130, 0.2)',
+        borderColor: 'rgba(75, 0, 130, 1)',
+        borderWidth: 1
+      }
+    ]
+  }
+  var myChart = new Chart(ctx5, {
+    type: 'bar',
+    data: data
+  })
+  
+  var ctx6 = document.getElementById('reason_purchase').getContext('2d')
+  var reason_purchase_labels = {arreglo: {{ reason_purchase_labels|safe }}};
+  var reason_purchase_values = {arreglo: {{ reason_purchase_values|safe }}};
+  var myChart = new Chart(ctx6, {
+    type: 'doughnut',
+    data: {
+      labels: reason_purchase_labels.arreglo,
+      datasets: [
+        {
+          data: reason_purchase_values.arreglo,
+          backgroundColor: ['rgba(255, 0, 0, 0.7)','rgba(0, 128, 255, 0.6)','rgba(46, 139, 87, 0.8)','rgba(255, 165, 0, 0.75)','rgba(75, 0, 130, 0.85)']
+        }
+      ]
+    }
+  })
+
+  var ctx7 = document.getElementById('mark').getContext('2d')
+  var mark_labels = {arreglo: {{ mark_labels|safe }}};
+  var mark_values = {arreglo: {{ mark_values|safe }}};
+  var myChart = new Chart(ctx7, {
+    type: 'pie',
+    data: {
+      labels: mark_labels.arreglo,
+      datasets: [
+        {
+          data: mark_values.arreglo,
+          backgroundColor: ['rgba(0, 255, 0, 0.7)','rgba(255, 0, 255, 0.6)','rgba(0, 0, 255, 0.8)','rgba(128, 0, 128, 0.75)','rgba(255, 255, 0, 0.85)']
+        }
+      ]
+    }
+  })
+
+  var ctx8 = document.getElementById('article').getContext('2d')
+  var article_labels = {arreglo: {{ article_labels|safe }}};
+  var article_values = {arreglo: {{ article_values|safe }}};
+  var myChart = new Chart(ctx8, {
+    type: 'doughnut',
+    data: {
+      labels: article_labels.arreglo,
+      datasets: [
+        {
+          data: article_values.arreglo,
+          backgroundColor: ['rgba(255, 0, 0, 0.7)','rgba(0, 128, 255, 0.6)','rgba(46, 139, 87, 0.8)']
+        }
+      ]
+    }
+  })
+  
+</script>
+{% endblock %}

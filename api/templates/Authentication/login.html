@@ -1,0 +1,96 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'css/font.css' %}" />
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="{% static 'css/fonts_google.css' %}" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="{% static 'css/mdb_uikit.css' %}" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión</title>
+  </head>
+
+  <body>
+    <!-- Start view -->
+    <section class="h-100 gradient-form" style="background-color: #eee;">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-xl-10">
+            <div class="card rounded-3 text-black">
+              <div class="row g-0">
+                <div class="col-lg-6">
+                  <div class="card-body p-md-5 mx-md-4">
+                    <div class="text-center">
+                      <img src="{% static 'img\carrito-compras_6427-22.webp' %}" style="width: 185px;" alt="logo" />
+                      <h4 class="mt-1 mb-5 pb-1">Mercado UPG</h4>
+                    </div>
+                    <form method="POST" action="{% url 'login' %}">
+                      {% csrf_token %}
+                      <p>Iniciar sesión</p>
+                      {{ form.as_p }}
+                      {% comment %} <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example11">Usuario</label>
+                        <div>{{ form.username }}</div>
+                      </div>
+
+                      <div class="form-outline mb-4">
+                        <label class="form-label" for="form2Example22">Contraseña</label>
+                        <div>{{ form.username }}</div>
+                      </div> {% endcomment %}
+
+                      {% if error_message %}
+                        <div class="text-danger">{{ error_message }}</div>
+                      {% endif %}
+
+                      <div class="text-center pt-1 pb-1">
+                        <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Entrar</button>
+                      </div>
+                    </form>
+                    <div class="text-center pt-1 mb-5 pb-1">
+                      <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-tertiary text-secondary" data-mdb-toggle="modal" data-mdb-target="#exampleModal">Olvidaste tu contraseña... Da clic aquí</button>
+
+                      <!-- Modal -->
+                      <div class="modal top fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-mdb-backdrop="true" data-mdb-keyboard="true">
+                        <div class="modal-dialog" style="width: 300px;">
+                          <div class="modal-content text-center">
+                            <div class="modal-header h5 text-white gradient-custom-2 justify-content-center">Recuperar Contraseña</div>
+                            <div class="modal-body px-5">
+                              <p class="py-2">Introduce tu dirección de correo electrónico y te enviaremos un correo electrónico con instrucciones para restablecer tu contraseña.</p>
+                              <div class="form-outline">
+                                <input type="email" id="typeEmail" class="form-control my-3" />
+                                <label class="form-label" for="typeEmail">Correo Electronico</label>
+                              </div>
+                              <a href="{% url 'login' %}" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3">Recuperar contraseña</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Modal -->
+
+                    <div class="d-flex align-items-center justify-content-center pb-4">
+                      <p class="mb-0 me-2">¿No tienes una cuenta?</p>
+                      <a href="{% url 'register' %}" class="btn btn-outline-danger">Crear una cuenta</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 bg-login">
+                  <div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End view -->
+  </body>
+
+  <!-- MDB -->
+  <script type="text/javascript" src="{% static 'js/mdb_uikit.js' %}"></script>
+</html>

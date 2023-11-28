@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'css/font.css' %}" />
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="{% static 'css/fonts_google.css' %}" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="{% static 'css/mdb_uikit.css' %}" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión</title>
+  </head>
+
+  <body>
+    <!-- Start view -->
+    <section class="h-100 gradient-form" style="background-color: #eee;">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-xl-10">
+            <div class="card rounded-3 text-black">
+              <div class="row g-0">
+                <div class="col-lg-6">
+                  <div class="card-body p-md-5 mx-md-4">
+                    <div class="text-center">
+                      <img src="{% static 'img\carrito-compras_6427-22.webp' %}" style="width: 185px;" alt="logo" />
+                      <h4 class="mt-1 mb-5 pb-1">Mercado UPG</h4>
+                    </div>
+                    <div>
+                      <h1>Haz Cerrado Sesión.</h1>
+                    </div>
+                    <div class="text-center pt-1 pb-1">
+                      <a href="{% url 'login' %}" class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3">Iniciar Sesión</a>
+                      <a href="{% url 'home' %}" class="btn btn-outline-danger">Ir al home</a>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-center pb-4">
+                      <p class="mb-0 me-2">¿No tienes una cuenta?</p>
+                      <a href="{% url 'register' %}" class="btn btn-outline-danger">Crear una cuenta</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 bg-login">
+                  <div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End view -->
+  </body>
+
+  <!-- MDB -->
+  <script type="text/javascript" src="{% static 'js/mdb_uikit.js' %}"></script>
+</html>

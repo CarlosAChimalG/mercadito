@@ -1,0 +1,22 @@
+{% extends 'Common/mainAdmin.html' %}
+{% load static %}
+
+{% block title %}Lista{% endblock  %}
+
+{% block head %}
+{% endblock  %}
+
+{% block content_tilte %}
+<h1>Lista de productos</h1>
+{% endblock  %}
+
+{% block content %}
+<ul>
+  {% for product in products %}
+      <li>{{ product.name }} - {{ product.description }} - Precio: ${{ product.price }}</li>
+  {% endfor %}
+</ul>
+{% endblock  %}
+
+{% block scripts %}
+{% endblock  %}

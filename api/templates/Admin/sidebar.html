@@ -1,0 +1,18 @@
+{% load static %}
+<div class="d-flex justify-content-center">
+  <img src="{% static 'img\carrito-compras_6427-22.webp' %}" height="180" alt="MDB Logo" loading="lazy" style="margin-top: -1px;" class="circle" />
+</div>
+<ul class="pt-5">
+  <li class="text-white">
+    <a class="text-white" href="{% url 'dashboard' %}">DashBoard</a>
+  </li>
+  <li class="text-white">
+    <a class="text-white" href="{% url 'seller' %}">Vendedores</a>
+  </li>
+  <li class="text-white">
+    <a class="text-white" href="{% url 'products' %}">Productos</a>
+  </li>
+  <li class="text-white">
+    <a class="text-white" href="{% url 'payments' %}">Pagos</a>
+  </li>
+</ul>

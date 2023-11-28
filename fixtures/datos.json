@@ -1,0 +1,362 @@
+[
+    {
+        "model": "api.question",
+        "pk": 1,
+        "fields": {
+            "id": 1,
+            "name": "Carmen",
+            "lastName": "Ruiz",
+            "email": "carmen_ruiz@gmail.com",
+            "package": "Grande",
+            "person": "Para la familia",
+            "packaging": "En bolsa",
+            "reasonPurchase": "Historia de la marca",
+            "send": "No",
+            "mark": "Bimbo",
+            "category": "Electrónicos y tecnología",
+            "article": "Un único uso y no desechable"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 2,
+        "fields": {
+            "id": 2,
+            "name": "Isabel",
+            "lastName": "Romero",
+            "email": "isabel_romero@gmail.com",
+            "package": "Pequeño",
+            "person": "Para si mismo",
+            "packaging": "En Caja",
+            "reasonPurchase": "Reputación de la marca",
+            "send": "No",
+            "mark": "Samsung",
+            "category": "Juguetes y entretenimiento",
+            "article": "Un único y desechable"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 3,
+        "fields": {
+            "id": 3,
+            "name": "Diego",
+            "lastName": "Hernández",
+            "email": "diego_hernández@gmail.com",
+            "package": "Mediano",
+            "person": "Para el hogar",
+            "packaging": "En plástico",
+            "reasonPurchase": "Precio",
+            "send": "No",
+            "mark": "Samsung",
+            "category": "Alimentos",
+            "article": "Varios usos"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 4,
+        "fields": {
+            "id": 4,
+            "name": "Ana",
+            "lastName": "González",
+            "email": "ana_gonzález@gmail.com",
+            "package": "Pequeño",
+            "person": "Para si mismo",
+            "packaging": "En Caja",
+            "reasonPurchase": "Calidad",
+            "send": "Si",
+            "mark": "Apple",
+            "category": "Artículos para el hogar",
+            "article": "Un único y desechable"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 5,
+        "fields": {
+            "id": 5,
+            "name": "Javier",
+            "lastName": "García",
+            "email": "javier_garcía@gmail.com",
+            "package": "Grande",
+            "person": "Para la familia",
+            "packaging": "En plástico",
+            "reasonPurchase": "Calidad",
+            "send": "No",
+            "mark": "Apple",
+            "category": "Electrónicos y tecnología",
+            "article": "Un único y desechable"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 6,
+        "fields": {
+            "id": 6,
+            "name": "Carlos",
+            "lastName": "Suárez",
+            "email": "carlos_suárez@gmail.com",
+            "package": "Mediano",
+            "person": "Para el hogar",
+            "packaging": "En bolsa",
+            "reasonPurchase": "Calidad",
+            "send": "No",
+            "mark": "Samsung",
+            "category": "Alimentos",
+            "article": "Un único uso y no desechable"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 7,
+        "fields": {
+            "id": 7,
+            "name": "Francisco",
+            "lastName": "Romero",
+            "email": "francisco_romero@gmail.com",
+            "package": "Mediano",
+            "person": "Para la familia",
+            "packaging": "En plástico",
+            "reasonPurchase": "Calidad",
+            "send": "No",
+            "mark": "Bimbo",
+            "category": "Ropa",
+            "article": "Un único y desechable"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 8,
+        "fields": {
+            "id": 8,
+            "name": "Ana",
+            "lastName": "García",
+            "email": "ana_garcía@gmail.com",
+            "package": "Pequeño",
+            "person": "Para el hogar",
+            "packaging": "En plástico",
+            "reasonPurchase": "Calidad",
+            "send": "No",
+            "mark": "Bimbo",
+            "category": "Alimentos",
+            "article": "Un único y desechable"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 9,
+        "fields": {
+            "id": 9,
+            "name": "Valentina",
+            "lastName": "Pérez",
+            "email": "valentina_pérez@gmail.com",
+            "package": "Pequeño",
+            "person": "Para si mismo",
+            "packaging": "En Caja",
+            "reasonPurchase": "Reputación de la marca",
+            "send": "No",
+            "mark": "Samsung",
+            "category": "Electrónicos y tecnología",
+            "article": "Un único y desechable"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 10,
+        "fields": {
+            "id": 10,
+            "name": "Javier",
+            "lastName": "Romero",
+            "email": "javier_romero@gmail.com",
+            "package": "Grande",
+            "person": "Para la familia",
+            "packaging": "En Caja",
+            "reasonPurchase": "Precio",
+            "send": "No",
+            "mark": "Nike",
+            "category": "Ropa",
+            "article": "Un único y desechable"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 11,
+        "fields": {
+            "id": 11,
+            "name": "Laura",
+            "lastName": "Vargas",
+            "email": "laura_vargas@gmail.com",
+            "package": "Grande",
+            "person": "Para el hogar",
+            "packaging": "En Caja",
+            "reasonPurchase": "Historia de la marca",
+            "send": "Si",
+            "mark": "McDonald's",
+            "category": "Juguetes y entretenimiento",
+            "article": "Un único uso y no desechable"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 12,
+        "fields": {
+            "id": 12,
+            "name": "Javier",
+            "lastName": "Díaz",
+            "email": "javier_díaz@gmail.com",
+            "package": "Pequeño",
+            "person": "Para el hogar",
+            "packaging": "En Caja",
+            "reasonPurchase": "Historia de la marca",
+            "send": "Si",
+            "mark": "Nike",
+            "category": "Artículos para el hogar",
+            "article": "Varios usos"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 13,
+        "fields": {
+            "id": 13,
+            "name": "Carlos",
+            "lastName": "Romero",
+            "email": "carlos_romero@gmail.com",
+            "package": "Mediano",
+            "person": "Para la familia",
+            "packaging": "En plástico",
+            "reasonPurchase": "Precio",
+            "send": "Si",
+            "mark": "Bimbo",
+            "category": "Higiene y cuidado personal",
+            "article": "Un único y desechable"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 14,
+        "fields": {
+            "id": 14,
+            "name": "Paula",
+            "lastName": "Díaz",
+            "email": "paula_díaz@gmail.com",
+            "package": "Mediano",
+            "person": "Para la familia",
+            "packaging": "En Caja",
+            "reasonPurchase": "Calidad",
+            "send": "Si",
+            "mark": "Apple",
+            "category": "Electrónicos y tecnología",
+            "article": "Un único y desechable"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 15,
+        "fields": {
+            "id": 15,
+            "name": "Camila",
+            "lastName": "García",
+            "email": "camila_garcía@gmail.com",
+            "package": "Pequeño",
+            "person": "Para la familia",
+            "packaging": "En Caja",
+            "reasonPurchase": "Reputación de la marca",
+            "send": "No",
+            "mark": "Nike",
+            "category": "Juguetes y entretenimiento",
+            "article": "Varios usos"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 16,
+        "fields": {
+            "id": 16,
+            "name": "Ana",
+            "lastName": "Ruiz",
+            "email": "ana_ruiz@gmail.com",
+            "package": "Grande",
+            "person": "Para la familia",
+            "packaging": "En Caja",
+            "reasonPurchase": "Calidad",
+            "send": "Si",
+            "mark": "Bimbo",
+            "category": "Artículos para el hogar",
+            "article": "Varios usos"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 17,
+        "fields": {
+            "id": 17,
+            "name": "Isabel",
+            "lastName": "García",
+            "email": "isabel_garcía@gmail.com",
+            "package": "Pequeño",
+            "person": "Para el hogar",
+            "packaging": "En bolsa",
+            "reasonPurchase": "Calidad",
+            "send": "No",
+            "mark": "McDonald's",
+            "category": "Artículos para el hogar",
+            "article": "Varios usos"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 18,
+        "fields": {
+            "id": 18,
+            "name": "Laura",
+            "lastName": "Torres",
+            "email": "laura_torres@gmail.com",
+            "package": "Mediano",
+            "person": "Para si mismo",
+            "packaging": "En plástico",
+            "reasonPurchase": "Historia de la marca",
+            "send": "No",
+            "mark": "Apple",
+            "category": "Artículos para el hogar",
+            "article": "Un único y desechable"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 19,
+        "fields": {
+            "id": 19,
+            "name": "Juan",
+            "lastName": "Martínez",
+            "email": "juan_martínez@gmail.com",
+            "package": "Grande",
+            "person": "Para el hogar",
+            "packaging": "En bolsa",
+            "reasonPurchase": "Reputación de la marca",
+            "send": "No",
+            "mark": "McDonald's",
+            "category": "Higiene y cuidado personal",
+            "article": "Varios usos"
+        }
+    },
+    {
+        "model": "api.question",
+        "pk": 20,
+        "fields": {
+            "id": 20,
+            "name": "Francisco",
+            "lastName": "González",
+            "email": "francisco_gonzález@gmail.com",
+            "package": "Mediano",
+            "person": "Para la familia",
+            "packaging": "En bolsa",
+            "reasonPurchase": "Historia de la marca",
+            "send": "No",
+            "mark": "Apple",
+            "category": "Juguetes y entretenimiento",
+            "article": "Un único y desechable"
+        }
+    }
+]

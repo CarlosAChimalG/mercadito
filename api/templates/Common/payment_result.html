@@ -1,0 +1,31 @@
+{% extends 'Common/mainAdmin.html' %}
+{% load static %}
+
+{% block title %}
+  Title Page
+{% endblock %}
+
+{% block head %}
+  <script></script>
+{% endblock %}
+
+{% block content_tilte %}
+  <h1>Resultado del pago</h1>
+{% endblock %}
+
+{% block content %}
+  {% if success %}
+    <p>¡Gracias por tu compra!</p>
+  {% else %}
+    <p>Hubo un error durante el proceso de pago:</p>
+    <p>{{ error }}</p>
+    <p>Por favor, intenta nuevamente o utiliza otra tarjeta.</p>
+  {% endif %}
+  <div class="d-flex" style="width: fit-content;">
+    <a href="{% url 'payments' %}" class="btn btn-primary btn-block fa-lg gradient-custom-2 me-2">Volver a pago</a>
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script></script>
+{% endblock %}
