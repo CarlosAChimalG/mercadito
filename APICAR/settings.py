@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import environ
-import django_database_url
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -93,9 +93,7 @@ WSGI_APPLICATION = 'APICAR.wsgi.application'
 #     }
 # }
 DATABASES = {
-    'default': dj_database_url.parse()
-
-    
+    'default': dj_database_url.parse('postgres://mercadodb_5ce9_user:RGB1DTp7WNT2SdHLPXdhqbGYAcExfdZc@dpg-clj53hq4ed1s73buno3g-a.oregon-postgres.render.com/mercadodb_5ce9')
 }
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
