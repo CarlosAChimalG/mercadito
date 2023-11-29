@@ -2,7 +2,6 @@ from django.db import models
 
 # Create your models here.
 
-# User
 class Rol(models.Model):
     idRol = models.IntegerField(primary_key=True,db_column="idRol")
     nameRol = models.CharField(max_length=100,db_column="nameRol")
@@ -45,8 +44,6 @@ class Question(models.Model):
     article = models.CharField(max_length=100,db_column="article")
     class Meta:
         db_table = "questions"
-        
-        # models.py
 
 class Order(models.Model):
     product = models.CharField(max_length=255)
