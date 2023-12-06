@@ -1,0 +1,77 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="{% static 'css/font.css' %}" />
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="{% static 'css/fonts_google.css' %}" />
+    <!-- MDB -->
+    <link rel="stylesheet" href="{% static 'css/mdb_uikit.css' %}" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/css/uikit.min.css" />
+
+    <!-- Incluye los scripts de jQuery, Popper, Bootstrap, y UIkit desde un CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.0-beta.40/js/uikit-icons.min.js"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</title>
+  </head>
+  <body>
+    <!-- Start view -->
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <!-- Container wrapper -->
+      <div class="container">
+        <!-- Navbar brand -->
+        <a class="navbar-brand me-2" href="{% url 'home' %}"><img src="{% static 'img\carrito-compras_6427-22.webp' %}" alt="MDB Logo" loading="lazy" style="margin-top: -1px; height: 80px !important  ;" /></a>
+
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample" aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarButtonsExample">
+          <!-- Left links -->
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link text-secondary" href="{% url 'home' %}">Inicio</a>
+            </li>
+          </ul>
+          <!-- Left links -->
+          {% if user %}
+            <div class="d-flex align-items-center">
+              <a href="{% url 'dashboard' %}" type="button" class="btn btn-primary btn-block fa-lg gradient-custom-2 me-2">DashBoard</a>
+            </div>
+            <div class="d-flex align-items-center">
+              <a href="{% url 'logout' %}" type="button" class="btn btn-block fa-lg btn-outline-danger">Salir</a>
+            </div>
+          {% else %}
+            <div class="d-flex align-items-center">
+              <a href="{% url 'login' %}" type="button" class="btn btn-primary btn-block fa-lg gradient-custom-2 me-2">Iniciar Sesión</a>
+            </div>
+            <div class="d-flex align-items-center">
+              <a href="{% url 'register' %}" type="button" class="btn btn-block fa-lg btn-outline-danger">Crear cuenta</a>
+            </div>
+          {% endif %}
+        </div>
+        <!-- Collapsible wrapper -->
+      </div>
+      <!-- Container wrapper -->
+    </nav>
+    <!-- Navbar -->
+    <!-- End view -->
+    <div class="container">
+      {% block content %}
+
+      {% endblock %}
+    </div>
+
+    <!-- MDB -->
+    <script src="{% static 'js/mdb_uikit.js' %}" />
+  </body>
+</html>

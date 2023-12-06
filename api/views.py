@@ -13,7 +13,11 @@ stripe.api_key = settings.STRIPE_SECRET_KEY
 
 # Create your views here.
 def home(request):
-    return render(request, 'Home/home.html')
+    context = {
+      'datas': ['Promo1', 'Promo2', 'Promo 3'],
+      'countDatas': 3
+    }
+    return render(request, 'Home/home.html',context)
 def prueba1(request):
     return render(request, 'Admin/dashboard.html')
   

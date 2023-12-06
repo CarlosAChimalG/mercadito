@@ -1,60 +1,102 @@
+{% extends 'Home/main.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="{% static 'css/font.css' %}" />
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="{% static 'css/fonts_google.css' %}" />
-    <!-- MDB -->
-    <link rel="stylesheet" href="{% static 'css/mdb_uikit.css' %}" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inicio</title>
-  </head>
-  <body>
-    <!-- Start view -->
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <!-- Container wrapper -->
-      <div class="container">
-        <!-- Navbar brand -->
-        <a class="navbar-brand me-2" href="{% url 'home' %}"><img src="{% static 'img\carrito-compras_6427-22.webp' %}" height="80" alt="MDB Logo" loading="lazy" style="margin-top: -1px;" /></a>
 
-        <!-- Toggle button -->
-        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample" aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
-
-        <!-- Collapsible wrapper -->
-        <div class="collapse navbar-collapse" id="navbarButtonsExample">
-          <!-- Left links -->
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link text-secondary" href="{% url 'home' %}">Inicio</a>
-            </li>
-          </ul>
-          <!-- Left links -->
-          {% if user %}
-          <div class="d-flex align-items-center">
-            <a href="{% url 'dashboard' %}" type="button" class="btn btn-primary btn-block fa-lg gradient-custom-2 me-2">DashBoard</a>
+{% block content %}
+  <h1 class="text-title"><u>Promociones</u></h1>
+  <div class="row">
+    {% if countDatas != 0 %}
+      {% for data in datas %}
+        <!-- Botón para abrir el modal -->
+        <div class="col-3" uk-toggle="target: #miModal">
+          <div>
+            <img src="{% static 'img\carrito-compras_6427-22.webp' %}" alt="article" loading="lazy" style="height: 150px !important;" />
           </div>
-            <div class="d-flex align-items-center">
-              <a href="{% url 'logout' %}" type="button" class="btn btn-block fa-lg btn-outline-danger">Salir</a>
-            </div>
-          {% else %}
-            <div class="d-flex align-items-center">
-              <a href="{% url 'login' %}" type="button" class="btn btn-primary btn-block fa-lg gradient-custom-2 me-2">Iniciar Sesión</a>
-            </div>
-            <div class="d-flex align-items-center">
-              <a href="{% url 'register' %}" type="button" class="btn btn-block fa-lg btn-outline-danger">Crear cuenta</a>
-            </div>
-          {% endif %}
+          <div>
+            <b>Descripcion</b>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ex, tempora pariatur reiciendis modi ipsum libero! Quibusdam maxime, doloremque officiis quaerat aperiam, natus laboriosam nihil, hic nemo reiciendis in facilis?</p>
+          </div>
         </div>
-        <!-- Collapsible wrapper -->
-      </div>
-      <!-- Container wrapper -->
-    </nav>
-    <!-- Navbar -->
-    <!-- End view -->
-  </body>
-</html>
+
+        <!-- Modal -->
+        <div id="miModal" uk-modal>
+          <div class="uk-modal-dialog uk-modal-body">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <h2 class="uk-modal-title">Título del Modal</h2>
+            <!-- Contenido del cuerpo del modal -->
+            <p>Contenido del modal...</p>
+            <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Cerrar</button>
+              <button class="uk-button uk-button-primary" type="button">Guardar cambios</button>
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h3><u>No hay Promociones para mostrar</u></h3>
+    {% endif %}
+  </div>
+  <h1 class="text-title"><u>Recomendado</u></h1><div class="row">
+    {% if countDatas != 0 %}
+      {% for data in datas %}
+        <!-- Botón para abrir el modal -->
+        <div class="col-3" uk-toggle="target: #miModal">
+          <div>
+            <img src="{% static 'img\carrito-compras_6427-22.webp' %}" alt="article" loading="lazy" style="height: 150px !important;" />
+          </div>
+          <div>
+            <b>Nombre del Articulo</b>
+            <span class="text-discount">$1599.00</span>    
+        </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="miModal" uk-modal>
+          <div class="uk-modal-dialog uk-modal-body">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <h2 class="uk-modal-title">Título del Modal</h2>
+            <!-- Contenido del cuerpo del modal -->
+            <p>Contenido del modal...</p>
+            <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Cerrar</button>
+              <button class="uk-button uk-button-primary" type="button">Guardar cambios</button>
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h3><u>No hay Promociones para mostrar</u></h3>
+    {% endif %}
+  </div>
+  <h1 class="text-title"><u>Todos los Articulos</u></h1><div class="row">
+    {% if countDatas != 0 %}
+      {% for data in datas %}
+        <!-- Botón para abrir el modal -->
+        <div class="col-3" uk-toggle="target: #miModal">
+          <div>
+            <img src="{% static 'img\carrito-compras_6427-22.webp' %}" alt="article" loading="lazy" style="height: 150px !important;" />
+          </div>
+          <div>
+            <b>Descripcion</b>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores ex, tempora pariatur reiciendis modi ipsum libero! Quibusdam maxime, doloremque officiis quaerat aperiam, natus laboriosam nihil, hic nemo reiciendis in facilis?</p>
+          </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="miModal" uk-modal>
+          <div class="uk-modal-dialog uk-modal-body">
+            <button class="uk-modal-close-default" type="button" uk-close></button>
+            <h2 class="uk-modal-title">Título del Modal</h2>
+            <!-- Contenido del cuerpo del modal -->
+            <p>Contenido del modal...</p>
+            <p class="uk-text-right">
+              <button class="uk-button uk-button-default uk-modal-close" type="button">Cerrar</button>
+              <button class="uk-button uk-button-primary" type="button">Guardar cambios</button>
+            </p>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <h3><u>No hay Promociones para mostrar</u></h3>
+    {% endif %}
+  </div>
+{% endblock %}
